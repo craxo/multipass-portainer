@@ -5,6 +5,9 @@ This script will ready up a running VM using [Multipass](https://multipass.run/)
 ```
 multipass info portainer
 ```
+
+As the networks are bridged either of them will host Portainer on port 9443.
+
 #### To attach shell to the VM:
 ```
 multipass sh portainer
@@ -27,14 +30,15 @@ multipass launch --name portainer --network name=<user-input>,mode=manual
 ```
 multipass set local.privileged-mounts=true
 mkdir C:\VM\portainer
-multipass mount C:\VM\portainer portainer:/data
+multipass mount C:\VM\portainer portainer:/shared
 ```
+
+### Transfer init.sh
+The init.sh script sets up the virtual machine with the required tools such as Docker and Portainer.
+It also creates a new group for Docker in order to run the commands without sudo.
 
 ### Connect terminal to the VM
 ```
 multipass shell portainer
 ```
 
-### Transfer init.sh
-The init.sh script sets up the virtual machine with the required tools such as Docker and Portainer.
-It also creates a new group for Docker in order to run the commands without sudo.
