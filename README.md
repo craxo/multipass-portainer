@@ -26,7 +26,7 @@ Multipass v1.8.0 is fetched from [GitHub](https://github.com/canonical/multipass
 multipass launch --name portainer --network name=<network-name>
 ```
 
-In order to find eligable network names run:
+In order to find eligible network names run:
 ```
 multipass networks
 ```
