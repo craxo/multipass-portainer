@@ -1,24 +1,40 @@
-# The setup.bat script will do the following:
+# [Multipass Setup Script](https://github.com/craxo/multipass-portainer)
+This script will ready up a running VM using [Multipass](https://multipass.run/) with [Docker](https://www.docker.com/), and a web GUI for Docker named [Portainer](https://www.portainer.io/).
 
-## Download and install multipass
-You will have to reboot your computer in order to complete the installation.
-Re-run the script.
-
-## Launch Multipass from terminal:
+#### To find the web GUI:
 ```
-multipass launch --name portainer
+multipass info portainer
+```
+#### To attach shell to the VM:
+```
+multipass sh portainer
 ```
 
-## Mount some directory to the VM instance:
+Make sure you run this script as an administrator.
+
+
+## The script will invoke the following
+
+### Download and install multipass
+Multipass v1.8.0 is fetched from [GitHub](https://github.com/canonical/multipass/releases/v1.8.0/).
+
+### Launch Multipass from terminal:
+```
+multipass launch --name portainer --network name=<user-input>,mode=manual
+```
+
+### Mount local directory to the VM instance:
 ```
 multipass set local.privileged-mounts=true
 mkdir C:\VM\portainer
 multipass mount C:\VM\portainer portainer:/data
 ```
 
-## Wait for the VM to be created until connecting.
+### Connect terminal to the VM
 ```
 multipass shell portainer
 ```
 
-## Then it will copy init.sh script into the shared VM volume and execute script
+### Transfer init.sh
+The init.sh script sets up the virtual machine with the required tools such as Docker and Portainer.
+It also creates a new group for Docker in order to run the commands without sudo.
