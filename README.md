@@ -23,8 +23,14 @@ Multipass v1.8.0 is fetched from [GitHub](https://github.com/canonical/multipass
 
 ### Launch Multipass from terminal:
 ```
-multipass launch --name portainer --network name=<user-input>,mode=manual
+multipass launch --name portainer --network name=<network-name>
 ```
+
+In order to find eligable network names run:
+```
+multipass networks
+```
+
 
 ### Mount local directory to the VM instance:
 ```
