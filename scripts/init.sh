@@ -1,4 +1,3 @@
-
 echo "Get updates and install ca-certificates, curl, gnupg and lsb-release"
 sudo apt-get update
 sudo apt-get -y install \
