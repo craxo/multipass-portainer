@@ -1,6 +1,13 @@
 # [Multipass Setup Script](https://github.com/craxo/multipass-portainer)
 This script will ready up a running VM using [Multipass](https://multipass.run/) with [Docker](https://www.docker.com/), and a web GUI for Docker named [Portainer](https://www.portainer.io/).
 
+#### Run the script on Windows
+Open a cmd terminal with administrator access, browse to the cloned repository (where the 'setup.bat' is located) and run: 
+```
+./setup.bat
+```
+Follow the prompted instructions and re-run the script if it should fail.
+
 #### To find the web GUI:
 ```
 multipass info portainer
